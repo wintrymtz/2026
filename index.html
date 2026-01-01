@@ -22,8 +22,8 @@
         /* SOBRE */
         .envelope {
             position: relative;
-            width: 300px;
-            height: 200px;
+            width: 500px;
+            height: 400px;
             background: #cfa670;
             margin: 20px auto;
             border-radius: 0 0 10px 10px;
@@ -51,8 +51,8 @@
             position: absolute;
             bottom: -100%;
             left: 10px;
-            width: 280px;
-            height: 180px;
+            width: 480px;
+            height: 380px;
             background: #fff;
             color: #000;
             padding: 15px;
@@ -104,6 +104,7 @@
             <div class="flap"></div>
             <div class="letter" id="letter">
                 <p id="message">Mensaje secreto</p>
+                <img id="img" src="" width="100">
             </div>
         </div>
 
@@ -115,23 +116,57 @@
     </div>
 
     <script>
+        // SI ESTAS LEYENDO ESTO, NO SEAS METICHE 
         const passwords = {
-            "amor": "💖 Te amo más de lo que las palabras pueden expresar.",
-            "amistad": "🤝 Gracias por estar siempre, incluso en los peores momentos.",
-            "secreto": "🔐 Este mensaje solo lo leerán los elegidos.",
-            "recuerdo": "📸 Cada recuerdo contigo es invaluable."
+            "nea452": "Feliz año nuevo Andrea, espero que hayas cumplido todos tus propósitos y metas este año, gracias por estar ahí cuando lo necesité. A pesar de únicamente convivir contigo por mensaje, fuiste de las personas que más presente tuve este año, así que nuevamente gracias, y gracias por estar ahí cuando lo necesité, te quiero mucho y espero que en el próximo año puedas cumplir todas tus metas, tanto a nivel personal como profesional.",
+
+            "ram032": "Feliz año nuevo Ramses, gracias por tu amistad y tus preguntas hot, espero que se te cumplan tus propositos y tus metas el año que viene, fuiste alguien importante para mi este año, asi que gracias, tqn",
+
+            "avi546": "Feliz año nuevo Avi, Avichuela, Avichu, Avispa... Eres una persona epecial para mi, asi que agradezco tu amistad durante este año, gracias por estar ahí cuando lo necesité y gracias por ser tan considerada conmigo. Te deseo lo mejor para el próximo año, tqn",
+
+            "day980": "Feliz año nuevo Dayaí, a pesar de conocernos hace poquito, te convertiste en alguien especial para mi, así que gracias por tu amistad y gracias por estar ahí cuando lo necesité.Te deseo lo mejor para el 2026 y espero que cumplas todas tus metas y propósitos, te quiero <3",
+
+            "isaac394": "Feliz año nuevo Isaac, para que veas que no es unicamente para mi novia, te deseo un feliz año nuevo y que cumplas todos tus objetivos, otro año aguantandote...",
+
+            "cris231": "Feliz año nuevo Cris, gracias por tu amistad y gracias por tus gatos... Te quiero mucho y espero que puedas cumplir con tus metas y objetivo el año que viene. Eres una gran amiga y espero poder compartir momentos a pesar de ya no vernos en la uni <3",
+
+            "guille555": "Feliz año nuevo Guillermo, gracias por tu amistad y gracias por ser tan considerado conmigo, perdon por mi amargada forma de ser, te aprecio mucho y espero que acabar la carrera no sea excusa para dejar de ser unidos, tqm",
+
+            "eder000": "Feliz año nuevo Eder, eres con quien menos hablo del grupo pero aun asi aprecio mucho tu amistad, espero que puedas cumplir todas tus metas del próximo año, tqm"
+
+        };
+
+        const images = {
+            "nea452": "https://i.pinimg.com/originals/4b/f6/54/4bf6542832b3b60f9e02c9618158cca3.gif",
+
+            "ram032": "https://i.pinimg.com/originals/84/da/be/84dabee7783242f6fd6e33a052d7f338.gif",
+
+            "avi546": "https://media.tenor.com/Iqj4GVV1M4sAAAAj/mizuki-akiyama-mizuki.gif",
+
+            "day980": "https://i.pinimg.com/originals/c9/f2/05/c9f205e371d46ffa1e4d51a13c61b6ad.gif",
+
+            "isaac394": "https://media1.tenor.com/m/7ZzPY3wgX_4AAAAC/zero-two-002.gif",
+
+            "cris231": "https://hips.hearstapps.com/hmg-prod/images/gato-dice-no-1550658205.gif",
+
+            "guille555": "https://1b-f.s3.eu-west-1.amazonaws.com/a/145144-0A513857-CFF4-46C7-9878-0D307D9D69C1-0-1593238789.gif",
         };
 
         function checkPassword() {
             const input = document.getElementById("password").value;
             const envelope = document.getElementById("envelope");
             const message = document.getElementById("message");
+            const image = document.getElementById("img");
+
             const error = document.getElementById("error");
+
 
             if (passwords[input]) {
                 message.textContent = passwords[input];
+                image.src = images[input];
                 envelope.classList.add("open");
                 error.textContent = "";
+
             } else {
                 envelope.classList.remove("open");
                 error.textContent = "❌ Contraseña incorrecta";
